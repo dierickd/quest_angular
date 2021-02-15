@@ -1,0 +1,18 @@
+<div class="container">
+
+  <div class="card">
+    <img [src]="User.photo" class="card-img-top" [alt]="User.name">
+    <div class="card-body">
+      <h3 class="card-title">{{ User.name }} {{ User.firstName }}</h3>
+      <p class="card-text" *ngIf="!toggle">Age : {{ User.age }}</p>
+      <p class="card-text" [innerHTML]="">Citation : {{ User.quote }}</p>
+    </div>
+    <div class="card-footer">
+      <button (click)="toggleAge()">Show/Hide age</button>
+      <div class="mt-3">
+        <label for="quote">Entrer une citation:</label>
+        <input type="text" name="quote" id="quote" [(ngModel)]="User.quote">
+      </div>
+    </div>
+  </div>
+</div>
